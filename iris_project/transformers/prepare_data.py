@@ -27,7 +27,7 @@ if 'test' not in globals():
 @transformer
 def transform(df: pd.DataFrame, *args, **kwargs) -> pd.DataFrame:
     """Split dataset into 80% train and 20% test partitions."""
-    train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
+    train_df, test_df = train_test_split(df, test_size=0.3, random_state=42)
     train_copy = train_df.copy()
     test_copy = test_df.copy()
     train_copy['split'] = 'train'
